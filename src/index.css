@@ -198,10 +198,15 @@ input:focus-visible {
 
 .cart-summary-inner {
 	color: var(--ink-inverse);
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .cart-summary-muted {
 	color: color-mix(in srgb, var(--ink-inverse) 72%, transparent);
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .cart-summary-info {

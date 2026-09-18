@@ -149,12 +149,12 @@ function Carrito() {
           </div>
         </section>
       ) : (
-        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
-          <section className="space-y-4" aria-label="Productos en el carrito">
+        <div className="mt-8 grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start">
+          <section className="min-w-0 space-y-4" aria-label="Productos en el carrito">
             {items.map((item, index) => (
               <article
                 key={item.lineId}
-                className="arcade-card pixel-corners group relative overflow-hidden p-4 pt-12 sm:p-5"
+                className="arcade-card pixel-corners group relative min-w-0 overflow-hidden p-4 pt-12 sm:p-5"
               >
                 <div className="absolute right-3 top-3 z-10">
                   <span className="cart-item-badge bg-brand-charcoal/80 px-2 py-1 font-mono text-[8px] font-bold text-brand-gold">
@@ -163,7 +163,7 @@ function Carrito() {
                   </span>
                 </div>
 
-                <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+                <div className="flex min-w-0 flex-col gap-5 sm:flex-row sm:items-center">
                   <div className="relative h-64 w-full shrink-0 overflow-hidden bg-[var(--surface-raised)] sm:h-40 sm:w-32">
                     <ProductImage
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -178,12 +178,12 @@ function Carrito() {
                     </span>
                   </div>
 
-                  <div className="min-w-0 flex-1">
+                  <div className="min-w-0 flex-1 overflow-hidden">
                     <p className="font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-brand-cognac">
                       {item.product.category}
                     </p>
 
-                    <h2 className="theme-heading mt-1 pr-16 font-display text-3xl leading-none tracking-[0.02em] sm:text-4xl">
+                    <h2 className="theme-heading mt-1 max-w-full break-words pr-16 font-display text-[clamp(2rem,5vw,3rem)] leading-[0.9] tracking-[0.02em] sm:pr-0">
                       {item.product.name}
                     </h2>
 
@@ -293,9 +293,9 @@ function Carrito() {
             </Link>
           </section>
 
-          <aside className="lg:sticky lg:top-6">
-            <div className="pixel-frame pixel-frame--navy">
-              <div className="cart-summary-inner pixel-frame-inner bg-brand-navy p-5 text-brand-paper sm:p-6">
+          <aside className="min-w-0 lg:sticky lg:top-6">
+            <div className="pixel-frame pixel-frame--navy max-w-full">
+              <div className="cart-summary-inner pixel-frame-inner max-w-full bg-brand-navy p-5 text-brand-paper sm:p-6">
                 <div className="marquee-lights mb-5 px-1">
                   {Array.from({ length: 10 }).map((_, i) => (
                     <span key={i} />
@@ -323,7 +323,7 @@ function Carrito() {
                     Total de productos
                   </p>
 
-                  <p className="mt-1 font-display text-5xl leading-none tracking-[0.02em] text-brand-gold">
+                  <p className="mt-1 max-w-full break-words font-display text-4xl leading-none tracking-[0.02em] text-brand-gold sm:text-5xl">
                     {formatCurrency(subtotal)}
                   </p>
                 </div>
