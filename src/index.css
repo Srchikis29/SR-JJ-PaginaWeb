@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+	--color-brand-navy: #293c7c;
+	--color-brand-teal: #024944;
+	--color-brand-cognac: #ad7c4b;
+	--color-brand-gold: #c7984f;
+	--color-brand-wine: #812b4a;
+	--color-brand-ivory: #f6f1e8;
+	--color-brand-cream: #eee4d3;
+	--color-brand-paper: #fffdf8;
+	--color-brand-charcoal: #202329;
+	--color-brand-muted: #746d63;
+	--font-display: "Cormorant Garamond", Georgia, serif;
+	--font-body: "Source Sans 3", Arial, sans-serif;
+}
+
+:root {
+	font-family: "Source Sans 3", Arial, sans-serif;
+	color: #202329;
+	background: #f6f1e8;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #f6f1e8;
+}
+
+button,
+input,
+select {
+	font: inherit;
+}
+
+::selection {
+	background: #c7984f;
+	color: #202329;
+}
