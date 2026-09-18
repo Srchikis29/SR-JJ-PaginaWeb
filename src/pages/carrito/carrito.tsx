@@ -52,7 +52,7 @@ function Carrito() {
               Checkout terminal / Cart
             </div>
 
-            <h1 className="theme-heading mt-3 font-display text-6xl leading-none tracking-[0.04em] sm:text-7xl lg:text-8xl">
+            <h1 className="theme-heading mt-3 font-display text-[clamp(3.75rem,18vw,6rem)] leading-none tracking-[0.04em] sm:text-7xl lg:text-8xl">
               CARRITO
             </h1>
 
@@ -154,7 +154,7 @@ function Carrito() {
             {items.map((item, index) => (
               <article
                 key={item.lineId}
-                className="arcade-card pixel-corners group relative overflow-hidden p-4 sm:p-5"
+                className="arcade-card pixel-corners group relative overflow-hidden p-4 pt-12 sm:p-5"
               >
                 <div className="absolute right-3 top-3 z-10">
                   <span className="cart-item-badge bg-brand-charcoal/80 px-2 py-1 font-mono text-[8px] font-bold text-brand-gold">

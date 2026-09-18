@@ -88,7 +88,7 @@ function Checkout() {
               Final transmission / Order
             </div>
 
-            <h1 className="theme-heading mt-3 font-display text-6xl leading-none tracking-[0.04em] sm:text-7xl lg:text-8xl">
+            <h1 className="theme-heading mt-3 font-display text-[clamp(3.75rem,18vw,6rem)] leading-none tracking-[0.04em] sm:text-7xl lg:text-8xl">
               CHECKOUT
             </h1>
 

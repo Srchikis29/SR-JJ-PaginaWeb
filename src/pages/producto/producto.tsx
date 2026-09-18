@@ -106,8 +106,8 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                 </section>
 
                 <section>
-                    <p className="retro-kicker text-brand-cognac">Product ID // {product.id}</p>
-                    <h1 className="theme-heading mt-3 font-display text-6xl leading-none tracking-[0.03em] sm:text-7xl">{product.name}</h1>
+                    <p className="retro-kicker break-all text-brand-cognac">Product ID // {product.id}</p>
+                    <h1 className="theme-heading mt-3 font-display text-[clamp(3.5rem,17vw,6rem)] leading-none tracking-[0.03em] sm:text-7xl">{product.name}</h1>
                     <p className="theme-muted mt-6 text-base leading-7">{product.description}</p>
 
                     <div className="mt-7 flex flex-wrap items-baseline gap-3">
@@ -198,7 +198,7 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                         </div>
                     </div>
 
-                    <div className="mt-6 flex items-center justify-between gap-4 border-t border-brand-gold/30 pt-5 font-mono text-xs uppercase text-brand-cream/70">
+                    <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-brand-gold/30 pt-5 font-mono text-xs uppercase text-brand-cream/70">
                         <span>{product.stock > 0 ? `${product.stock} disponibles` : "Agotado"}</span>
                         <span>{selectedColor || "Selecciona un color"}</span>
                     </div>

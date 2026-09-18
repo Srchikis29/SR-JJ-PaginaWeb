@@ -68,7 +68,7 @@ function Catalogo() {
         <p className="pixel-tag text-brand-cognac">
           Stage select / Coleccion 01
         </p>
-        <h1 className="theme-heading mt-3 font-display text-7xl tracking-[0.04em] sm:text-8xl">
+        <h1 className="theme-heading mt-3 font-display text-[clamp(3.75rem,18vw,7rem)] tracking-[0.04em] sm:text-8xl">
           Catalogo
         </h1>
         <p className="theme-muted mt-3 text-base leading-7 sm:text-lg">

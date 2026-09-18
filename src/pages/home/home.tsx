@@ -100,7 +100,7 @@ function Home() {
             </div>
 
             <div className="mt-5 max-w-lg">
-              <h1 className="hero-copy__title neon-text font-display text-[4.8rem] leading-[0.78] tracking-[0.035em] text-brand-paper sm:text-8xl lg:text-[8.5rem] xl:text-[9rem]">
+              <h1 className="hero-copy__title neon-text font-display text-[clamp(3.75rem,20vw,4.8rem)] leading-[0.78] tracking-[0.035em] text-brand-paper sm:text-8xl lg:text-[8.5rem] xl:text-[9rem]">
                 Press
                 <br />
                 <span className="text-brand-gold">wear.</span>
@@ -141,7 +141,7 @@ function Home() {
           </div>
 
           <div
-            className="relative z-10 mx-auto w-full max-w-[560px]"
+            className="hero-monitor relative z-10 mx-auto w-full max-w-[560px]"
             onMouseEnter={() => setIsHoveringHero(true)}
             onMouseLeave={() => setIsHoveringHero(false)}
           >
@@ -199,7 +199,7 @@ function Home() {
                           }`}
                         >
                           <ProductImage
-                            className="h-full w-full object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.65)]"
+                            className="hero-monitor__image h-full w-full object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.65)]"
                             src={image}
                             alt={`${heroProduct?.name ?? "Producto"} vista ${index + 1}`}
                             loading={index === 0 ? "eager" : "lazy"}

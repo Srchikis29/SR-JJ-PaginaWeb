@@ -63,6 +63,10 @@
 	text-rendering: optimizeLegibility;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -71,6 +75,11 @@ body {
 	margin: 0;
 	min-width: 0;
 	background: var(--surface-page);
+}
+
+img {
+	display: block;
+	max-width: 100%;
 }
 
 button,
@@ -535,14 +544,49 @@ input:focus-visible {
 	}
 
 	.hero-copy {
-		display: contents;
+		display: flex;
+		flex-direction: column;
+		order: 1;
+		width: 100%;
 	}
 
-	.hero-copy__label { order: 1; }
-	.hero-copy__title { order: 2; }
-	.hero-copy__description { order: 3; }
-	.hero-monitor { order: 4; width: 100%; }
-	.hero-cta { order: 5; align-self: flex-start; margin-top: 0.25rem; }
+	.hero-monitor {
+		order: 2;
+		width: 100%;
+	}
+
+	.hero-monitor__image {
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.hero-cta {
+		align-self: flex-start;
+		margin-top: 0.25rem;
+	}
+
+	.hero-copy__status {
+		margin-top: 2rem;
+	}
+
+	.hero-screen .relative.min-h-\[360px\] {
+		min-height: clamp(18rem, 105vw, 26rem);
+	}
+}
+
+@media (max-width: 380px) {
+	.arcade-cabinet {
+		padding: 12px;
+	}
+
+	.hero-screen {
+		gap: 2rem;
+		padding-inline: 1rem !important;
+	}
+
+	.hero-copy__title {
+		font-size: clamp(3.75rem, 20vw, 4.8rem) !important;
+	}
 }
 
 /* ================= Marquesina: fila de foquitos parpadeando ================= */
