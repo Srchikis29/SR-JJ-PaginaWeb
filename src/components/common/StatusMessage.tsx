@@ -22,10 +22,10 @@ function StatusMessage({ variant, title, description, action }: StatusMessagePro
     const iconClassName = variant === "error" ? "text-brand-wine" : variant === "success" ? "text-brand-teal" : "text-brand-cognac";
 
     return (
-        <div className="border border-brand-gold/40 bg-brand-paper px-6 py-14 text-center" role={variant === "error" ? "alert" : "status"}>
+        <div className="retro-panel border border-brand-gold/40 px-6 py-14 text-center" role={variant === "error" ? "alert" : "status"}>
             <Icon className={`mx-auto ${iconClassName} ${variant === "loading" ? "animate-spin" : ""}`} size={28} aria-hidden="true" />
-            <h2 className="mt-4 font-display text-3xl font-semibold text-brand-navy">{title}</h2>
-            {description && <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-brand-muted">{description}</p>}
+            <h2 className="theme-heading mt-4 font-display text-4xl tracking-[0.03em]">{title}</h2>
+            {description && <p className="theme-muted mx-auto mt-2 max-w-md text-sm leading-6">{description}</p>}
             {action && <div className="mt-6">{action}</div>}
         </div>
     );

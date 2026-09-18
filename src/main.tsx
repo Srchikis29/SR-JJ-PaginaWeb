@@ -7,10 +7,10 @@ import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<BrowserRouter>
-			<CartProvider>
-				<App />
-			</CartProvider>
-		</BrowserRouter>
-	</StrictMode>,
+    <BrowserRouter>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </BrowserRouter>
+  </StrictMode>,
 );

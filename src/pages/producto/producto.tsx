@@ -19,15 +19,15 @@ function Producto() {
     }
 
     if (error) {
-        return <main className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><StatusMessage variant="error" title="No pudimos cargar el producto" description={error} action={<button className="rounded-lg bg-stone-950 px-4 py-2 text-sm font-medium text-white" type="button" onClick={reload}>Intentar nuevamente</button>} /></main>;
+                return <main className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><StatusMessage variant="error" title="No pudimos cargar el producto" description={error} action={<button className="retro-button bg-brand-gold px-4 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand-charcoal" type="button" onClick={reload}>Intentar nuevamente</button>} /></main>;
     }
 
     if (!product) {
         return (
             <main className="mx-auto flex w-full max-w-7xl flex-col items-center px-4 py-20 text-center sm:px-6 lg:px-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cognac">Producto no encontrado</p>
-                <h1 className="mt-3 font-display text-5xl font-semibold tracking-tight text-brand-navy">No pudimos encontrar esta prenda</h1>
-                <p className="mt-3 max-w-md text-base leading-7 text-brand-muted">
+                <h1 className="theme-heading mt-3 font-display text-5xl tracking-tight">No pudimos encontrar esta prenda</h1>
+                <p className="theme-muted mt-3 max-w-md text-base leading-7">
                     El producto puede haber sido retirado o el enlace no es valido.
                 </p>
                 <Link
@@ -79,7 +79,7 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
         <main className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
                 <section aria-label={`Galeria de ${product.name}`}>
-                    <div className="aspect-[4/5] overflow-hidden border border-brand-gold/50 bg-brand-cream">
+                    <div className="arcade-frame aspect-[4/5] overflow-hidden bg-brand-cream shadow-[6px_6px_0_#024944]">
                         <ProductImage
                             className="h-full w-full object-cover"
                             src={product.images[activeImageIndex]}
@@ -91,8 +91,8 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                             {product.images.map((image, index) => (
                                 <button
                                     key={image}
-                                    className={`aspect-square overflow-hidden rounded-lg border-2 ${
-                                        index === activeImageIndex ? "border-stone-950" : "border-transparent"
+                                        className={`aspect-square overflow-hidden border-2 ${
+                                        index === activeImageIndex ? "border-brand-gold" : "border-transparent"
                                     }`}
                                     type="button"
                                     aria-label={`Ver imagen ${index + 1}`}
@@ -106,15 +106,15 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                 </section>
 
                 <section>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cognac">{product.category}</p>
-                    <h1 className="mt-3 font-display text-5xl font-semibold leading-none tracking-tight text-brand-navy sm:text-6xl">{product.name}</h1>
-                    <p className="mt-6 text-base leading-7 text-brand-muted">{product.description}</p>
+                    <p className="retro-kicker text-brand-cognac">Product ID // {product.id}</p>
+                    <h1 className="theme-heading mt-3 font-display text-6xl leading-none tracking-[0.03em] sm:text-7xl">{product.name}</h1>
+                    <p className="theme-muted mt-6 text-base leading-7">{product.description}</p>
 
                     <div className="mt-7 flex flex-wrap items-baseline gap-3">
-                        <span className="text-3xl font-semibold text-brand-charcoal">{formatCurrency(finalPrice)}</span>
+                        <span className="font-mono text-2xl font-bold text-brand-gold">{formatCurrency(finalPrice)}</span>
                         {hasDiscount && (
                             <>
-                                <span className="text-base text-brand-muted line-through">{formatCurrency(product.price)}</span>
+                                <span className="theme-muted text-base line-through">{formatCurrency(product.price)}</span>
                                 <span className="bg-brand-wine px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-brand-paper">
                                     -{discount}%
                                 </span>
@@ -122,17 +122,17 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                         )}
                     </div>
 
-                    <div className="mt-8 space-y-6 border-y border-brand-gold/50 py-7">
+                    <div className="arcade-panel mt-8 space-y-6 border-y border-brand-gold/50 p-5 py-7">
                         <fieldset>
-                            <legend className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-teal">Talla</legend>
+                            <legend className="retro-kicker text-brand-gold">Talla</legend>
                             <div className="mt-3 flex flex-wrap gap-2">
                                 {product.sizes.map((size) => (
                                     <button
                                         key={size}
                                             className={`min-w-11 border px-3 py-2 text-sm font-semibold transition-colors ${
                                             selectedSize === size
-                                                ? "border-brand-navy bg-brand-navy text-brand-paper"
-                                                : "border-brand-cognac/60 text-brand-navy hover:border-brand-navy"
+                                                ? "border-brand-gold bg-brand-gold text-brand-charcoal"
+                                                : "border-brand-cognac/60 text-[var(--ink-primary)] hover:border-brand-gold"
                                         }`}
                                         type="button"
                                         aria-pressed={selectedSize === size}
@@ -148,15 +148,15 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                         </fieldset>
 
                         <fieldset>
-                            <legend className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-teal">Color</legend>
+                            <legend className="retro-kicker text-brand-gold">Color</legend>
                             <div className="mt-3 flex flex-wrap gap-3">
                                 {product.colors.map((color) => (
                                     <button
                                         key={color.name}
                                         className={`inline-flex items-center gap-2 border px-3 py-2 text-sm transition-colors ${
                                             selectedColor === color.name
-                                                ? "border-brand-navy text-brand-navy"
-                                                : "border-brand-cognac/60 text-brand-muted hover:border-brand-navy"
+                                                ? "border-brand-gold text-brand-gold"
+                                                : "border-brand-cognac/60 text-[var(--ink-primary)] hover:border-brand-gold"
                                         }`}
                                         type="button"
                                         aria-pressed={selectedColor === color.name}
@@ -173,10 +173,10 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                         </fieldset>
 
                         <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-teal">Cantidad</p>
+                            <p className="retro-kicker text-brand-gold">Cantidad</p>
                             <div className="mt-3 flex w-fit items-center border border-brand-cognac/60">
                                 <button
-                                    className="inline-flex h-10 w-10 items-center justify-center text-brand-muted transition-colors hover:text-brand-navy disabled:text-brand-cream"
+                                    className="inline-flex h-10 w-10 items-center justify-center text-[var(--ink-muted)] transition-colors hover:text-brand-gold disabled:text-brand-muted"
                                     type="button"
                                     aria-label="Disminuir cantidad"
                                     disabled={quantity <= 1}
@@ -184,9 +184,9 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                                 >
                                     <Minus size={16} aria-hidden="true" />
                                 </button>
-                                <span className="w-10 text-center text-sm font-semibold text-brand-charcoal" aria-live="polite">{quantity}</span>
+                                <span className="theme-page w-10 text-center font-mono text-sm font-bold" aria-live="polite">{quantity}</span>
                                 <button
-                                    className="inline-flex h-10 w-10 items-center justify-center text-brand-muted transition-colors hover:text-brand-navy disabled:text-brand-cream"
+                                    className="inline-flex h-10 w-10 items-center justify-center text-[var(--ink-muted)] transition-colors hover:text-brand-gold disabled:text-brand-muted"
                                     type="button"
                                     aria-label="Aumentar cantidad"
                                     disabled={quantity >= product.stock}
@@ -198,12 +198,12 @@ function ProductoDetalle({ product }: ProductoDetalleProps) {
                         </div>
                     </div>
 
-                    <div className="mt-6 flex items-center justify-between gap-4 border-t border-brand-gold/30 pt-5 text-sm text-brand-muted">
+                    <div className="mt-6 flex items-center justify-between gap-4 border-t border-brand-gold/30 pt-5 font-mono text-xs uppercase text-brand-cream/70">
                         <span>{product.stock > 0 ? `${product.stock} disponibles` : "Agotado"}</span>
                         <span>{selectedColor || "Selecciona un color"}</span>
                     </div>
                     <button
-                        className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 bg-brand-navy px-5 py-3 text-sm font-semibold uppercase tracking-[0.1em] text-brand-paper transition-colors hover:bg-brand-teal disabled:cursor-not-allowed disabled:bg-brand-muted"
+                        className="arcade-button mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 bg-brand-gold px-5 py-3 text-brand-charcoal disabled:cursor-not-allowed disabled:bg-brand-muted"
                         type="button"
                         disabled={product.stock === 0}
                         onClick={handleAddToCart}
