@@ -19,11 +19,11 @@ function Navbar() {
     <header className="border-b border-brand-gold/40 bg-brand-paper">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
-            className="shrink-0 font-display text-3xl font-semibold leading-none text-brand-navy sm:text-4xl"
+            className="shrink-0 font-display text-6xl font-semibold leading-none text-brand-navy sm:text-4xl"
             to="/"
             onClick={closeMobileMenu}
         >
-            Mi Tienda
+            Tokio
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Navegacion principal">
